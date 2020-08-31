@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    padding : 0px;
+    margin : 0px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    background : linear-gradient(to left ,rgb(44, 201, 240),rgb(165, 160, 231))
+}
+.calc{
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: flex-start; 
+    align-content: flex-start;
+    width: 500px; 
+    flex-flow: column;
+    min-height: 100vh;
+} 
+.result{
+    grid-column : 1 / -1;
+    display: flex;
+    height: 100px;
+    width: 400px;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.623);
+    color: white;
+    font-size: inherit;
+    padding : 5px;
+    word-wrap: normal;
+}
+.result .curr{
+    font-size: xx-large;
+}
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+}
+.row .clear{  
+    width: 200px;
+    background-color: rgb(240, 115, 32);
+}
+.row .eq{
+    width: 200px;
+}
+button{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    border: lightcyan;
+}
+.row :hover{
+    cursor: pointer;
+    background-color: aquamarine;
+}
+.row :nth-last-child(1){
+    background-color: rgb(255, 255, 130);
+}
+.row :nth-last-child(1):hover{
+    background-color: rgb(247, 247, 160);
+}
