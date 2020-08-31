@@ -1,6 +1,4 @@
 class computations{
-    // let curr;
-    // let prev;
     constructor(a,b){
         this.curr = a;
         this.prev = b;
@@ -21,7 +19,7 @@ class computations{
         this.delegate();
     }
     operator(op){
-        if(this.curr == '')
+        if(this.curr == '' && op != 'AC')
             return;
         switch(op){
             case '+':
@@ -93,27 +91,33 @@ class computations{
                     this.prev = this.curr;
                     this.curr = '';
                 }else{
-                    this.prev = '' + ((parseFloat(this.curr) / parseFloat(this.prev)) * 100);
+                    this.prev = '' + ((parseFloat(this.prev) * parseFloat(this.curr)) / 100);
                     this.curr = '';
                 }
-                this.sym = '+';
+                this.sym = '%';
                 break;
                               
         }
         this.delegate();
     }
 }
-const c = new computations('0','');
-c.delegate();
 
+const calc = new computations('0','');
+calc.delegate();
+
+// filtering out the operators and operands(i.e numbers)
 function buttonClick(value){
     console.log(value);
     if(isNaN(parseFloat(value))){
-        c.operator(value);
+        calc.operator(value);
     }else{
-        c.number(value);
+        calc.number(value);
     }
 }
+
+
+//setting up the event listeners
+
 const query = document.querySelectorAll('button')
 console.log(query)
 window.onload=function(){
